@@ -18,6 +18,10 @@ void Cards();
 
 void HomeGuest();
 
+void Bcolor();
+
+void Array123();
+
 using namespace std;
 
 
@@ -26,8 +30,70 @@ int main()
 {
 
 
+
     return 0;
 
+}
+
+void Array123() {
+    int n;
+    while(cin>>n)
+    {
+        bool x=false;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(n-1-j==i){
+                    cout<<2;
+                    continue;
+                }
+                if(i==j){
+                    cout<<1;
+                }
+                else{
+                    cout<<3;
+                    continue;
+                }
+            }
+            cout<<endl;
+        }
+    }
+}
+
+void Bcolor() {
+    char N[8][8];
+    int i=0;
+    double BcolorOfCol=0;
+    double BcolorOfRow=0;
+
+    double Bcolor=0;
+    while (i<8) {
+        for (int j = 0; j < 8; ++j) {
+            cin >>N[i][j];
+        }
+         i++;
+    }
+    for (int j = 0; j < 8; ++j) {
+        for (int k = 0; k < 8; ++k) {
+            if (N[j][k] == 'B')
+            {
+                BcolorOfRow++;
+            }
+            if (N[k][j] == 'B')
+            {
+                BcolorOfCol++;
+            }
+
+        }
+
+    }
+
+    BcolorOfCol=ceil(BcolorOfCol/8);
+    BcolorOfRow=ceil(BcolorOfRow/8);
+
+    Bcolor=(BcolorOfRow >BcolorOfCol ?BcolorOfRow:BcolorOfCol);
+    cout << Bcolor;
 }
 
 void HomeGuest() {
@@ -50,7 +116,7 @@ void HomeGuest() {
         }
     }
     cout <<"number = " << count;
-    return 0;
+
 }
 
 void Cards() {
