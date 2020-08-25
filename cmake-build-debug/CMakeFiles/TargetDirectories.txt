@@ -1,0 +1,3 @@
+C:/Users/Eyadh/CLionProjects/secondset/cmake-build-debug/CMakeFiles/secondset.dir
+C:/Users/Eyadh/CLionProjects/secondset/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Eyadh/CLionProjects/secondset/cmake-build-debug/CMakeFiles/rebuild_cache.dir
