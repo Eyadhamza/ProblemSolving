@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <array>
 void sequence();
 
 void VanyaandFence();
@@ -14,6 +14,10 @@ void Overthinking();
 
 void MainDiagonal();
 
+void Cards();
+
+void HomeGuest();
+
 using namespace std;
 
 
@@ -22,10 +26,67 @@ int main()
 {
 
 
-
     return 0;
 
 }
+
+void HomeGuest() {
+    int n,x,y,count=0;
+    cin >> n;
+    int* a = new int[n];
+    int* b = new int[n];
+
+    for (int i = 0; i < n; ++i) {
+        cin >> x >>y;
+        a[i]=x;
+        b[i]=y;
+    }
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (a[i]==b[j])
+            {
+                count++;
+            }
+        }
+    }
+    cout <<"number = " << count;
+    return 0;
+}
+
+void Cards() {
+    int n;
+    cout << "enter number of cards ";
+    cin >> n;
+    int* arr = new int[n];
+
+    cout << "enter the values of cards";
+    for (int i = 0; i < n; ++i) {
+        cin >> arr[i];
+    }
+    int sumP1=0 ,sumP2=0,role=0,max=0 ,j=n-1,i=0;
+
+    while (i<=j){
+        if (arr[i]>=arr[j])
+        {
+
+           max=arr[i];
+           i++;
+        }
+        else
+        {
+            max=arr[j];
+            j--;
+        }
+        if(role%2==0)
+            sumP1=sumP1+max;
+        else
+            sumP2=sumP2+max;
+        role++;
+
+    }
+    cout <<"the first player sum : "<< sumP1 << endl <<"the second player sum : "<<sumP2;
+}
+
 void Secondarydiagonal() {
     double N[12][12], sum=0;
     char c[2];
