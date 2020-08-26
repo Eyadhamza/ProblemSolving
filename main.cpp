@@ -1,5 +1,8 @@
 #include <iostream>
 #include <array>
+#include <vector>
+#include <algorithm>
+
 void sequence();
 
 void VanyaandFence();
@@ -22,16 +25,105 @@ void Bcolor();
 
 void Array123();
 
+void BadLuck();
+
+void A160();
+
 using namespace std;
 
 
 
 int main()
 {
-
-
-
     return 0;
+
+}
+
+void A160() {
+    int ArraySize;
+    cin >> ArraySize;
+    int* arr = new int[ArraySize];
+    int sum=0;
+    int counter=0;
+    for(int i=0;i<ArraySize;i++){
+        cin>>arr[i];
+        sum+=arr[i];
+    }
+    sum=sum/2;
+    sort(arr,arr+ArraySize);
+    int sum2=0;
+    for(int i=ArraySize-1;i>=0;i--){
+        sum2+=arr[i];
+        ++counter;
+        if(sum2>sum){
+            break;
+        }
+
+
+    }
+
+    cout<<counter;
+}
+
+void BadLuck() {
+
+    int ArraySize;
+    cin >> ArraySize;
+    int* ArrayNum = new int[ArraySize];
+
+    cout << "enter elements of the array";
+    for (int i = 0; i < ArraySize; ++i)
+    {
+        cin >> ArrayNum[i];
+    }
+
+    vector<int>NegativeSet;
+    vector<int>PositiveSet;
+    vector<int>ZeroSet;
+    vector<int>NegativeNUM;
+
+    for (int i = 0; i < ArraySize; ++i)
+    {
+        if (ArrayNum[i]<0)
+        {
+            NegativeNUM.push_back(ArrayNum[i]);
+
+
+        }
+        if (ArrayNum[i]>0)
+        {
+            PositiveSet.push_back(ArrayNum[i]);
+
+
+        }
+        if (ArrayNum[i]==0)
+        {
+            ZeroSet.push_back(ArrayNum[i]);
+
+        }
+
+
+    }
+    for (int i = 0; i < NegativeNUM.size(); ++i) {
+        NegativeSet.push_back(NegativeNUM.at(i));
+        PositiveSet.push_back(NegativeNUM.at(i+1));
+        NegativeSet.push_back(NegativeNUM.at(i+2));
+        NegativeSet.push_back(NegativeNUM.at(i+3));
+    }
+    cout <<NegativeSet.size() << " ";
+    for(auto i = NegativeSet.begin(); i != NegativeSet.end(); ++i)
+        cout <<  *i <<" ";
+    cout << endl;
+    cout <<PositiveSet.size() << " ";
+    for(auto i = PositiveSet.begin(); i != PositiveSet.end(); ++i)
+        cout <<  *i <<" ";
+    cout << endl;
+
+    cout <<ZeroSet.size() << " ";
+    for(auto i = ZeroSet.begin(); i != ZeroSet.end(); ++i)
+        cout <<  *i <<" ";
+    cout << endl;
+
 
 }
 
