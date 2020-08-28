@@ -2,34 +2,10 @@
 #include <array>
 #include <vector>
 #include <algorithm>
+#include <string>
 
-void sequence();
 
-void VanyaandFence();
 
-void dangerous();
-
-void bets();
-
-void cordin();
-
-void Overthinking();
-
-void MainDiagonal();
-
-void Cards();
-
-void HomeGuest();
-
-void Bcolor();
-
-void Array123();
-
-void BadLuck();
-
-void A160();
-
-void ReallyDontKnow();
 
 using namespace std;
 
@@ -37,10 +13,172 @@ using namespace std;
 
 int main()
 {
+    string a,b;
+    cin >> a >> b;
+    for (int i = 0; i < a.size(); i++) {
+        if (a[i] < 92) {
+            a[i] += 32;
+        }
+        if (b[i] < 92) {
+            b[i] += 32;
+        }
+    }
+    if (a < b) {
+        cout << -1;
+    } else if (a > b) {
+        cout << 1;
+    } else if (a == b) {
+        cout << 0;
+    }
 
 
     return 0;
 
+}
+
+void ProblemKickedME() {
+    int t;
+    cin >>t;
+
+    bool OneBeside=false;
+    for (int i = 0; i < t; ++i) {
+        string s;
+        cin >>s;
+        int NumberOfZeros=0;
+        for (int j = 0; j < s.length(); ++j) {
+                if (s[j] == '0') {
+                    if (s[j+1]=='1')
+                    {
+                        OneBeside=true;
+
+                    }
+                    else if(s[j+1]=='0')
+                    {
+
+                        OneBeside=false;
+                        NumberOfZeros++;
+                    }
+                }
+                if (s[j] == '1') {
+
+                    if (s[j+1]=='0')
+                    {
+                        NumberOfZeros++;
+                        OneBeside=true;
+
+                    }
+            }
+
+            }
+        if (OneBeside)
+        {
+            cout <<NumberOfZeros << endl;
+        }
+        else{
+            cout << 0 << endl;
+        }
+
+    }
+}
+
+void stringsandother() {
+    int n;
+    cin >> n;
+
+
+    for (int i = 0; i < n; ++i) {
+        string b;
+        string bAfter;
+        cin >> b;
+        if (b.length()==2)
+        {
+            cout <<b << endl;
+            continue;
+        }
+        for (int j = 0; j < b.length(); j=j+2) {
+            bAfter=bAfter+b[j];
+
+
+        }
+        if (b.length()%2==0)
+        {
+            bAfter=bAfter+b[b.length()-1];
+        }
+    cout << bAfter << endl;
+
+    }
+}
+
+void ConvertingWords() {
+    string s;
+    cin >> s;
+    for (int i = 0; i < s.length(); ++i) {
+        s[i]=tolower(s[i]);
+    }
+    string converted;
+    for (int i = 0; i < s.length(); ++i) {
+
+        if (s[i]!='a'&&s[i]!='o'&&s[i]!='y'&&s[i]!='e'&&s[i]!='o'&&s[i]!='i'&&s[i]!='u')
+        {
+            converted = converted+'.' + s[i];
+        }
+
+    }
+    cout <<converted;
+}
+
+void Hello() {
+    string s;
+    cin >> s;
+    string ActualWord="hello";
+    int index=0;
+    for (int i = 0; i < s.length(); ++i) {
+        if (index==5)break;
+        if (s[i]==ActualWord[index])
+        {
+            index++;
+        }
+    }
+    if (index==5)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+}
+
+void WordAndInverse() {
+    string word,inverseWord;
+
+
+    cin >> word;
+
+    cin >> inverseWord;
+
+    bool matched=false;
+    if (word.size()!=inverseWord.size() && word.size()>100)
+    {
+        exit(0);
+    }
+    for (int i = 0; i < word.size(); ++i) {
+
+        if (word[i]==inverseWord[(word.size()-1)-i])
+        {
+
+            matched= true;
+        } else{
+            matched=false;
+        }
+
+    }
+    if (matched)
+    {
+        cout<< "YES";
+    } else{
+        cout<<"NO";
+    }
 }
 
 void ReallyDontKnow() {
