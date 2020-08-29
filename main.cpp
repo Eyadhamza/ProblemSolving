@@ -6,13 +6,53 @@
 
 
 
-
 using namespace std;
 
 
 
 int main()
 {
+
+
+    return 0;
+
+}
+
+void StringsMa() {
+    string s;
+    cin >> s;
+
+    sort(s.begin(), s.end());
+    s.erase(unique(s.begin(), s.end()), s.end());
+    if (s.length()%2 ==0)
+    {
+
+        cout << "CHAT WITH HER!";
+
+    }else{
+
+        cout << "IGNORE HIM!";
+    }
+}
+
+void Abri() {
+    int n;
+    cin >> n;
+    string s,abv;
+    while (n--)
+    {
+        cin >> s;
+        if (s.length()>10)
+        {
+            abv=s[0]+to_string(s.length()-2)+s[s.length()-1];
+        } else{
+            cout << s <<endl;
+        }
+        cout << abv<<endl;
+    }
+}
+
+void NoSuitableName() {
     string a,b;
     cin >> a >> b;
     for (int i = 0; i < a.size(); i++) {
@@ -30,10 +70,6 @@ int main()
     } else if (a == b) {
         cout << 0;
     }
-
-
-    return 0;
-
 }
 
 void ProblemKickedME() {
