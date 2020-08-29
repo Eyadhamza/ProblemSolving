@@ -5,7 +5,6 @@
 #include <string>
 
 
-
 using namespace std;
 
 
@@ -14,8 +13,113 @@ int main()
 {
 
 
+
     return 0;
 
+}
+
+void Passwordres() {
+    string s, digit[10];
+    cin >> s;
+    for (size_t i = 0; i < sizeof(digit) / sizeof(digit[0]); ++i)
+    {
+        cin >> digit[i];
+    }
+    for (size_t i = 0; i < 8; ++i)
+    {
+        string x = s.substr(i * 10, 10);
+        for (size_t j = 0; j < 10; ++j)
+        {
+            if (x == digit[j])
+            {
+                cout << j;
+                break;
+            }
+        }
+    }
+    cout << endl;
+}
+
+void FailedAttemdt() {
+    string s;
+    int n;
+    cin >> n >> s ;
+    vector<char> vect;
+    for (int i = 0; i < s.length(); ++i) {
+        for (int j = i+1; j < s.length(); ++j) {
+            if (s[i]==s[j])
+            {
+                vect.push_back(s[i]);
+
+                vect.insert(vect.begin(),s[i]);
+                cout << s[i] << endl;
+            }
+        }
+
+    }
+    for(int i=0;i<vect.size();i++){
+        cout<<vect[i];
+    }
+    return s;
+}
+
+void YoungBrother() {
+    int n;
+    char s[6];
+    cin >> n;
+    while(n--){
+
+        cin >> s;
+        if(strlen(s)==5)
+        {
+           cout << "3";
+        }else if((s[0]=='t' && s[1]=='w')||(s[0]=='t'&&s[2]=='o')||(s[1]=='w'&&s[2]=='o')){
+            cout << "2";
+        }
+        else
+            cout << "1";
+    }
+}
+
+void Cipher() {
+    int len;
+    string s;
+    cin>>len;
+    cin>>s;
+    vector<char> vect;
+
+    while(len!=0){
+        if(len%2==1){
+
+            vect.push_back(s[0]);
+        }else{
+
+            vect.insert(vect.begin(),s[0]);
+        }
+        s.erase(0,1);
+        len=s.length();
+    }
+    for(int i=0;i<vect.size();i++){
+        cout<<vect[i];
+    }
+}
+
+void CharachterNumbers() {
+    string s;
+    cin >> s;
+    int length = 0;
+
+    char start='a';
+    for (int i = 0; i < s.length(); ++i) {
+
+        int diff = abs(s[i]-start);
+
+        length += min(diff, abs(26-diff));
+
+        start = s[i];
+
+    }
+    cout<<length << endl;
 }
 
 void StringsMa() {
